@@ -12,7 +12,10 @@ class BinarySearchTest {
     @Test
     void findNumberInSortedList() {
         BinarySearch binarySearch = new BinarySearch();
-        int elementIndex = binarySearch.findNumber(7237, sortedList);
-        assertEquals(7236, elementIndex);
+        long startTime = System.nanoTime();
+        int elementIndex = binarySearch.findNumber(237, sortedList);
+        long elapsedTime = System.nanoTime() - startTime;
+        assertEquals(236, elementIndex);
+        System.out.println("Searching time: " + elapsedTime * Math.pow(10, -6) + " milliseconds");
     }
 }
